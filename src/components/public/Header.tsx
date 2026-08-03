@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -17,10 +17,11 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <header className="w-full bg-cream sticky top-0 z-50 pt-2 md:pt-4 pb-1">

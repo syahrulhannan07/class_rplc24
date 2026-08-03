@@ -13,13 +13,18 @@ const COLORS = [
   { fill: "#34d399", stroke: "#10b981" },
 ];
 
-function CustomTooltip({ active, payload }: any) {
+type TooltipProps = {
+  active?: boolean;
+  payload?: { payload?: { fill?: string }; name?: string; value?: number }[];
+};
+
+function CustomTooltip({ active, payload }: TooltipProps) {
   if (!active || !payload?.length) return null;
   const item = payload[0];
   return (
     <div className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl shadow-xl px-4 py-3 min-w-[130px]">
       <div className="flex items-center gap-2">
-        <span className="w-3 h-3 rounded-sm" style={{ background: item.payload.fill }} />
+        <span className="w-3 h-3 rounded-sm" style={{ background: item.payload?.fill }} />
         <p className="text-sm font-semibold text-gray-800">{item.name}</p>
       </div>
       <p className="text-xl font-bold text-gray-900 mt-1">
@@ -85,7 +90,7 @@ export default function DonutChart({
               animationDuration={800}
               animationEasing="ease-out"
             >
-              {chartData.map((entry, i) => (
+              {chartData.map((entry) => (
                 <Cell key={entry.name} fill={entry.fill} />
               ))}
             </Pie>

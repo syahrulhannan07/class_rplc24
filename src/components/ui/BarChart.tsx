@@ -12,7 +12,13 @@ import {
 
 export type BarData = { label: string; value: number };
 
-function CustomTooltip({ active, payload, label }: any) {
+type TooltipProps = {
+  active?: boolean;
+  payload?: { value?: number }[];
+  label?: string;
+};
+
+function CustomTooltip({ active, payload, label }: TooltipProps) {
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl shadow-xl px-4 py-3 min-w-[130px]">
