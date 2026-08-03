@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ClassOfficer {
+  id           Int      @id @default(autoincrement())
+  name         String
+  position     String
+  photoUrl     String?
+  contact      String?
+  description  String?  @db.Text
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+enum DayOfWeek {
+  SENIN
+  SELASA
+  RABU
+  KAMIS
+  JUMAT
+  SABTU
+  MINGGU
+}
+
+enum ScheduleType {
+  TEORI
+  PRAKTIKUM
+}
+
+model ClassSchedule {
+  id         Int          @id @default(autoincrement())
+  day        DayOfWeek
+  startTime  String
+  endTime    String
+  courseName String
+  lecturer   String
+  room       String
+  jenis      ScheduleType @default(TEORI)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+}
+
+model Announcement {
+  id          Int       @id @default(autoincrement())
+  title       String
+  content     String    @db.Text
+  publishedAt DateTime
+  eventDate   DateTime?
+  eventTime   String?
+  location    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model GalleryAlbum {
+  id            Int            @id @default(autoincrement())
+  name          String
+  description   String?        @db.Text
+  eventDate     DateTime?
+  coverImageUrl String?
+  photos        GalleryPhoto[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model GalleryPhoto {
+  id        Int          @id @default(autoincrement())
+  albumId   Int
+  album     GalleryAlbum @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  photoUrl  String
+  caption   String?
+  createdAt DateTime     @default(now())
+}
+
+model ClassMember {
+  id          Int      @id @default(autoincrement())
+  name        String
+  githubUrl   String?
+  linkedinUrl String?
+  photoUrl    String?
+  contact     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CalendarEvent {
+  id          Int      @id @default(autoincrement())
+  eventName   String
+  eventDate   DateTime
+  eventTime   String?
+  location    String?
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

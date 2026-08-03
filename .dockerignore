@@ -1,0 +1,15 @@
+node_modules
+.next
+.env*
+.git
+.gitignore
+*.log
+*.tsbuildinfo
+data
+deploy
+design-system
+figma_full.json
+figma_node_105.json
+figma_pages.json
+prd-website-kelas.md
+README.md
