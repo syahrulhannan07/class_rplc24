@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const response = NextResponse.json({ success: true, message: "Login berhasil" });
     response.cookies.set("admin_session", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.COOKIE_SECURE === "true",
       sameSite: "lax",
       maxAge: 7 * 24 * 60 * 60,
       path: "/",

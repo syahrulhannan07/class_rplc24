@@ -4,7 +4,7 @@ export async function POST() {
   const response = NextResponse.json({ success: true, message: "Logout berhasil" });
   response.cookies.set("admin_session", "", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: process.env.COOKIE_SECURE === "true",
     sameSite: "lax",
     maxAge: 0,
     path: "/",
