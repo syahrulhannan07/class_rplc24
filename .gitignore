@@ -43,5 +43,6 @@ next-env.d.ts
 # docker / deploy
 /data
 *.sql
+!prisma/migrations/**/migration.sql
 /deploy/.env
 .env.production

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE ClassSchedule ADD COLUMN jenis ENUM('TEORI', 'PRAKTIKUM') NOT NULL DEFAULT 'TEORI';

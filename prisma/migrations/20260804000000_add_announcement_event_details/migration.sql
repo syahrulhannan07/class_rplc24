@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `Announcement` ADD COLUMN `eventDate` DATETIME NULL,
+ADD COLUMN `eventTime` VARCHAR(191) NULL,
+ADD COLUMN `location` VARCHAR(191) NULL;
