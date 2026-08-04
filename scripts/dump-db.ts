@@ -1,3 +1,5 @@
+import { writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -43,7 +45,9 @@ async function main() {
     console.error(`-- ${table}: ${rows.length} rows`);
   }
 
-  console.log(lines.join("\n"));
+  const outPath = fileURLToPath(new URL("../dump.sql", import.meta.url));
+  writeFileSync(outPath, lines.join("\n") + "\n", "utf8");
+  console.error(`-- written to ${outPath}`);
 }
 
 main()
