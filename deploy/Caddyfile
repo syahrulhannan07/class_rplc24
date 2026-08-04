@@ -1,4 +1,4 @@
-http://{$DOMAIN}:8080 {
+http://{$DOMAIN}:8080, http://:8080 {
 	encode zstd gzip
 	reverse_proxy app:3000
 }
