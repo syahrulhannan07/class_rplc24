@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
             />
           </div>
           <h1 className="font-display font-extrabold text-3xl text-brown uppercase tracking-tight">Login</h1>
-          <p className="font-sans text-base text-brown-light mt-1">Masuk ke panel admin RPL 2C</p>
+          <p className="font-sans text-base text-brown-light mt-1">Masuk ke panel admin RPL 3C</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full border-2 border-brown p-3 font-sans text-base text-brown bg-cream outline-none focus:shadow-[4px_4px_0_0_#1f1c0b] transition-shadow"
-              placeholder="admin@kelas.com"
+              placeholder="Masukkan email"
               required
             />
           </div>

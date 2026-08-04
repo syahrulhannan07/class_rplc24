@@ -114,47 +114,8 @@ export default function LandingPage() {
 
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div>
-              <AnimateIn>
-                <div className="bg-[#8af5ff] border-2 border-brown px-3 py-1.5 inline-block mb-3 md:mb-4">
-                  <span className="font-serif font-bold text-xs md:text-sm text-brown uppercase tracking-wider">
-                    IDENTITAS VISUAL
-                  </span>
-                </div>
-              </AnimateIn>
-              <AnimateIn delay={150}>
-                <h2 className="font-serif font-extrabold text-3xl md:text-5xl text-brown leading-tight mb-6 md:mb-8">
-                  FILOSOFI LOGO KELAS
-                </h2>
-              </AnimateIn>
-              <div className="space-y-4">
-                <AnimateIn delay={200}>
-                  <div className="brutal-box-sm bg-white p-4 md:p-5">
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">HURUF C</h3>
-                    <p className="font-sans text-sm md:text-base text-brown-light">
-                      Identitas kelas RPL C 2024, sekaligus melambangkan Collaboration, Creativity, dan Continuous Learning.
-                    </p>
-                  </div>
-                </AnimateIn>
-                <AnimateIn delay={350}>
-                  <div className="brutal-box-sm bg-white p-4 md:p-5">
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">BENTUK PYTHON</h3>
-                    <p className="font-sans text-sm md:text-base text-brown-light">
-                      Semangat pemrograman, logika berpikir, kemampuan beradaptasi, dan inovasi teknologi.
-                    </p>
-                  </div>
-                </AnimateIn>
-                <AnimateIn delay={350}>
-                  <div className="brutal-box-sm bg-white p-4 md:p-5">
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">GEAR</h3>
-                    <p className="font-sans text-sm md:text-base text-brown-light">
-                      Rekayasa perangkat lunak, kerja sama tim, disiplin, dan proses pengembangan yang terstruktur.
-                    </p>
-                  </div>
-                </AnimateIn>
-              </div>
-            </div>
-            <AnimateIn delay={250} className="h-full order-first md:order-none">
+            {/* LOGO — tengah di mobile, kanan di desktop */}
+            <AnimateIn delay={250} className="order-2 md:row-span-2">
               <div className="flex items-center justify-center h-full">
                 <div className="w-full max-w-[320px] md:max-w-[420px] aspect-square bg-kelas-yellow border-4 border-brown rounded-full shadow-[8px_8px_0_0_#1f1c0b] flex items-center justify-center relative overflow-hidden animate-bounce-soft">
                   <ShapeDiamond className="absolute top-3 right-3 animate-spin-slow" color="bg-kelas-pink" size={20} />
@@ -170,6 +131,52 @@ export default function LandingPage() {
                 </div>
               </div>
             </AnimateIn>
+
+            {/* JUDUL — di atas logo di mobile, kiri atas di desktop */}
+            <div className="order-1">
+              <div className="text-center md:text-left">
+                <AnimateIn>
+                  <div className="bg-[#8af5ff] border-2 border-brown px-3 py-1.5 inline-block mb-3 md:mb-4">
+                    <span className="font-serif font-bold text-xs md:text-sm text-brown uppercase tracking-wider">
+                      IDENTITAS VISUAL
+                    </span>
+                  </div>
+                </AnimateIn>
+                <AnimateIn delay={150}>
+                  <h2 className="font-serif font-extrabold text-3xl md:text-5xl text-brown leading-tight mb-6 md:mb-8">
+                    FILOSOFI LOGO KELAS
+                  </h2>
+                </AnimateIn>
+              </div>
+            </div>
+
+            {/* ARTI LOGO — di bawah logo di mobile, kiri bawah di desktop */}
+            <div className="order-3 space-y-4">
+              <AnimateIn delay={200}>
+                <div className="brutal-box-sm bg-white p-4 md:p-5">
+                  <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">HURUF C</h3>
+                  <p className="font-sans text-sm md:text-base text-brown-light">
+                    Identitas kelas RPL C 2024, sekaligus melambangkan Collaboration, Creativity, dan Continuous Learning.
+                  </p>
+                </div>
+              </AnimateIn>
+              <AnimateIn delay={350}>
+                <div className="brutal-box-sm bg-white p-4 md:p-5">
+                  <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">BENTUK PYTHON</h3>
+                  <p className="font-sans text-sm md:text-base text-brown-light">
+                    Semangat pemrograman, logika berpikir, kemampuan beradaptasi, dan inovasi teknologi.
+                  </p>
+                </div>
+              </AnimateIn>
+              <AnimateIn delay={350}>
+                <div className="brutal-box-sm bg-white p-4 md:p-5">
+                  <h3 className="font-serif font-bold text-lg md:text-xl text-brown mb-1">GEAR</h3>
+                  <p className="font-sans text-sm md:text-base text-brown-light">
+                    Rekayasa perangkat lunak, kerja sama tim, disiplin, dan proses pengembangan yang terstruktur.
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
           </div>
         </div>
       </section>

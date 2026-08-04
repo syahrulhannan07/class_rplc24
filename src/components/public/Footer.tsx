@@ -81,7 +81,7 @@ export default function Footer() {
       <div className="border-t-4 border-brown relative">
         <div className="max-w-7xl mx-auto px-4 md:px-10 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="font-serif font-bold text-xs md:text-sm text-brown uppercase tracking-wider">
-            &copy; {new Date().getFullYear()} RPL 2C — ALL RIGHTS RESERVED
+            &copy; {new Date().getFullYear()} RPL 3C — ALL RIGHTS RESERVED
           </p>
           <p className="font-serif font-bold text-xs text-brown-light uppercase tracking-wider">
             NO SOFT GRADIENTS ALLOWED
