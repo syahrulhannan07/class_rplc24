@@ -154,7 +154,7 @@ export default function LandingPage() {
                 </AnimateIn>
               </div>
             </div>
-            <AnimateIn delay={250} className="h-full">
+            <AnimateIn delay={250} className="h-full order-first md:order-none">
               <div className="flex items-center justify-center h-full">
                 <div className="w-full max-w-[320px] md:max-w-[420px] aspect-square bg-kelas-yellow border-4 border-brown rounded-full shadow-[8px_8px_0_0_#1f1c0b] flex items-center justify-center relative overflow-hidden animate-bounce-soft">
                   <ShapeDiamond className="absolute top-3 right-3 animate-spin-slow" color="bg-kelas-pink" size={20} />
